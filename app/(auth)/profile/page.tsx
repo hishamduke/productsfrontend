@@ -1,12 +1,18 @@
 import { Button } from "@/components/ui/button";
+import { logoutAction } from "@/lib/authHelpers";
 import { ofetcher } from "@/lib/ofetcher";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
+import { FetchError } from "ofetch";
 import React from "react";
 
 async function Page() {
   const req = await ofetcher("/auth/me", {
     headers: { Authorization: cookies().get("auth")?.value ?? "" },
+  }).catch((e: FetchError) => {
+    if (e.data?.message?.includes("Unauthorized")) {
+      redirect("/login");
+    }
   });
 
   return (
