@@ -8,8 +8,11 @@ export default function ProductCard({ product }: { product: TProduct }) {
     <Link
       href={`/product/${product._id}`}
       className={`group mx-2  flex flex-col gap-4 py-6
-       rounded transition
-       w-60
+       rounded 
+       w-36
+       sm:w-60
+       transition
+      
        `}
     >
       <div>
@@ -18,7 +21,9 @@ export default function ProductCard({ product }: { product: TProduct }) {
           alt={`Image of the product ${product.title}`}
           width={200}
           height={262}
-          className="w-auto h-[272px] 
+          className="w-auto 
+          h-[172px] 
+          sm:h-[272px] 
        group-hover:scale-105
           transition
           mx-auto

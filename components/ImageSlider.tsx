@@ -32,15 +32,15 @@ export default function ImageSlider({
       <CarouselContent className="w-full">
         {images.map((i, index) => (
           <CarouselItem key={index}>
-            <div className="p-1 ">
-              <Card>
-                <CardContent className="flex aspect-square items-center justify-center p-0 sm:p-6  ">
+            <div className="p-2 ">
+              <Card className="border-0 shadow-none">
+                <CardContent className="flex aspect-square items-center justify-center p-0 sm:p-6  max-w-xl  mx-auto">
                   <Image
                     src={i}
                     alt={alt}
                     width={300}
                     height={400}
-                    className="max-w-auto h-full  object-contain"
+                    className="max-w-lg h-full  object-contain"
                   />
                 </CardContent>
               </Card>
