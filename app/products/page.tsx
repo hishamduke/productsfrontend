@@ -11,7 +11,7 @@ export default async function Home() {
 
   return (
     <div className="flex flex-col gap-4">
-      <div className="flex justify-between">
+      <div className="flex justify-center flex-wrap gap-4 sm:justify-between">
         <h1 className="scroll-m-20 text-2xl  tracking-tight font-semibold ">
           All Products
         </h1>

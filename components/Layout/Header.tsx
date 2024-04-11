@@ -5,8 +5,8 @@ import Link from "next/link";
 export default function Header() {
   return (
     <div className="z-10 max-w-5xl w-full items-center justify-center text-sm lg:flex ">
-      <div className="fixed left-0 top-0  items-center w-full   border-b lg:border-0  backdrop-blur-md  pb-8 pt-8   lg:rounded-xl     ">
-        <div className="container  flex justify-between ">
+      <div className="fixed left-0 top-0  items-center w-full   border-b lg:border-0  backdrop-blur bg-white/10 pt-3   pb-8      ">
+        <div className="container  flex justify-between pt-8 ">
           <Link href={"/"}>
             <code className="font-extrabold text-3xl flex gap-2 items-start">
               <ShoppinCartIcon />
