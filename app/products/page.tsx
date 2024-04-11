@@ -7,17 +7,17 @@ import Link from "next/link";
 export const dynamic = "force-dynamic";
 
 export default async function Home() {
-  const products = (await ofetcher("/products/featured")) as TProduct[];
+  const products = (await ofetcher("/products")) as TProduct[];
 
   return (
     <div className="flex flex-col gap-4">
       <div className="flex justify-between">
         <h1 className="scroll-m-20 text-2xl  tracking-tight font-semibold ">
-          Featured Products
+          All Products
         </h1>
 
-        <Link href="/products">
-          <Button variant={"outline"}>View all products</Button>
+        <Link href="/">
+          <Button variant={"outline"}>View featured products</Button>
         </Link>
       </div>
 
