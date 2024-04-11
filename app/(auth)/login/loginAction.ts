@@ -3,7 +3,6 @@
 import { ofetcher } from "@/lib/ofetcher";
 import { formDataToObject } from "@/lib/utils";
 import { cookies } from "next/headers";
-import { FetchError } from "ofetch";
 import { ZodError, z } from "zod";
 
 export async function loginAction(formData: FormData) {
@@ -36,7 +35,6 @@ export async function loginAction(formData: FormData) {
         errorMessage = error.errors[0]?.message;
       }
     }
-    console.log(error);
   } finally {
     return errorMessage;
   }

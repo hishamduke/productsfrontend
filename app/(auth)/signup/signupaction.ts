@@ -3,13 +3,13 @@
 import { ofetcher } from "@/lib/ofetcher";
 import { formDataToObject } from "@/lib/utils";
 import { cookies } from "next/headers";
-import { z } from "zod";
+import { ZodError, z } from "zod";
 
 export async function signUpAction(formData: FormData) {
   let errorMessage = "We could not process your request";
   const schema = z.object({
     email: z.string().email().toLowerCase(),
-    password: z.string().min(6),
+    password: z.string().min(6, "Password must contain minimun of 6 letters"),
   });
 
   try {
@@ -26,7 +26,11 @@ export async function signUpAction(formData: FormData) {
       }
     }
   } catch (error) {
-    console.log("ERROR", JSON.stringify(error));
+    if (error instanceof ZodError) {
+      if (error.errors[0].message) {
+        errorMessage = error.errors[0]?.message;
+      }
+    }
   } finally {
     return errorMessage;
   }
