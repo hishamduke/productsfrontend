@@ -1,5 +1,4 @@
-import { Button } from "@/components/ui/button";
-import { logoutAction } from "@/lib/authHelpers";
+import ButtonFormState from "@/components/ButtonFormState";
 import { ofetcher } from "@/lib/ofetcher";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
@@ -34,8 +33,7 @@ async function Page() {
           </p>
           <p className="leading-7 ">{req?.user?.email}</p>
         </div>
-
-        <Button>Logout</Button>
+        <ButtonFormState>Logout</ButtonFormState>
       </form>
     </div>
   );

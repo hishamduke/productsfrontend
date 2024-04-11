@@ -7,6 +7,7 @@ import { signUpAction } from "./signupaction";
 import { redirect } from "next/navigation";
 import { cookies } from "next/headers";
 import { ErrorInParams } from "@/components/error-badge";
+import ButtonFormState from "@/components/ButtonFormState";
 
 export default function Signup() {
   if (cookies().get("auth")) {
@@ -48,9 +49,7 @@ export default function Signup() {
         </div>
 
         <ErrorInParams />
-        <Button type="submit" className="w-full">
-          Signup
-        </Button>
+        <ButtonFormState>Signup</ButtonFormState>
       </div>
       <div className="mt-4 text-center text-sm">
         Already have an account?{" "}

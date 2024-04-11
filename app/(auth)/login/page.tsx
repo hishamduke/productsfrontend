@@ -7,6 +7,7 @@ import { Label } from "@/components/ui/label";
 import { loginAction } from "./loginAction";
 import { redirect } from "next/navigation";
 import { ErrorInParams } from "@/components/error-badge";
+import ButtonFormState from "@/components/ButtonFormState";
 
 export default function Login() {
   return (
@@ -45,9 +46,8 @@ export default function Login() {
           <Input id="password" type="password" required name="password" />
         </div>
         <ErrorInParams />
-        <Button type="submit" className="w-full">
-          Login
-        </Button>
+
+        <ButtonFormState>Login</ButtonFormState>
       </div>
       <div className="mt-4 text-center text-sm">
         Don&apos;t have an account?{" "}
