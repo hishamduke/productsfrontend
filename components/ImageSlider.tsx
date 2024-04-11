@@ -25,7 +25,7 @@ export default function ImageSlider({
   return (
     <Carousel
       plugins={[plugin.current]}
-      className="w-full  max-w-lg  mx-auto flex flex-col h-full"
+      className="w-full   mx-auto flex flex-col h-full"
       onMouseEnter={plugin.current.stop}
       onMouseLeave={plugin.current.reset}
     >
@@ -34,7 +34,7 @@ export default function ImageSlider({
           <CarouselItem key={index}>
             <div className="p-1 ">
               <Card>
-                <CardContent className="flex aspect-square items-center justify-center p-6  ">
+                <CardContent className="flex aspect-square items-center justify-center p-0 sm:p-6  ">
                   <Image
                     src={i}
                     alt={alt}
@@ -48,8 +48,8 @@ export default function ImageSlider({
           </CarouselItem>
         ))}
       </CarouselContent>
-      <CarouselPrevious />
-      <CarouselNext />
+      <CarouselPrevious className="hidden sm:flex" />
+      <CarouselNext className="hidden sm:flex" />
     </Carousel>
   );
 }
